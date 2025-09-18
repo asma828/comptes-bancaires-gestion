@@ -69,5 +69,24 @@ public class BanqueController {
 
     }
 
+    public static void retrait() {
+        System.out.println("Entre le code du compte");
+        String code = scanner.nextLine();
+        Compte compte = comptes.get(code);
+        if (compte != null) {
+            System.out.println("entre le montant a retirer");
+            double retrait = scanner.nextDouble();
+            compte.setSolde(compte.getSolde() - retrait);
+        } else {
+            System.out.println("Compte introuvable");
+        }
+    }
+
+    public static void transfer(){
+        System.out.println("Entre le code du compte");
+        String code = scanner.nextLine();
+        Compte compte = comptes.get(code);
+
+    }
 
 }
