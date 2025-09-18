@@ -1,2 +1,4 @@
-public class Retrait extends Operation{
+package Model;
+
+public class Retrait extends Operation {
 }

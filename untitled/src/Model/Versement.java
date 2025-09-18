@@ -1,2 +1,4 @@
-public class Versement extends Operation{
+package Model;
+
+public class Versement extends Operation {
 }

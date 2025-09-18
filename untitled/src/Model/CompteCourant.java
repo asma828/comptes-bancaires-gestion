@@ -1,9 +1,11 @@
-public class CompteCourant extends Compte{
-private float Découvert;
+package Model;
 
-public CompteCourant(String code , float Découvert){
-    super(code);
-    this.code=code;
-    this.Découvert=Découvert;
-}
+public class CompteCourant extends Compte {
+    private float decouvert;
+
+    public CompteCourant(String code, float decouvert) {
+        super(code);
+        this.code = code;
+        this.decouvert = decouvert;
+    }
 }
