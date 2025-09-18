@@ -31,18 +31,43 @@ public class BanqueController {
             case 2:
                 System.out.println("entrer le code du compte :");
                 String codeCourant = scanner.nextLine();
-                comptes.put(codeCourant,new CompteCourant(codeCourant,0));
+                comptes.put(codeCourant, new CompteCourant(codeCourant, 0));
                 System.out.println("compte creé avec succes");
         }
 
 
     }
-public  static void checkSolde(){
+
+    public static void checkSold() {
         System.out.println("entre le code du compte");
         String code = scanner.nextLine();
         Compte compte = comptes.get(code);
-        if(compte != null){
+        if (compte != null) {
             System.out.println("votre solde est " + compte.getSolde());
+        } else {
+            System.out.println("ce compte n'existe pas");
         }
-}
+
+    }
+
+    public static void versement() {
+        System.out.println("entre le code du compte");
+        String code = scanner.nextLine();
+        Compte compte = comptes.get(code);
+        if (compte == null) {
+            System.out.println("Compte introuvable");
+            return;
+        }
+
+
+        System.out.println("entre le montant a deposer");
+        double montant = scanner.nextDouble();
+        compte.setSolde(compte.getSolde() + montant);
+        comptes.put(code, compte);
+        System.out.println("Dépôt effectué");
+        System.out.println(comptes.get(code).getSolde());
+
+    }
+
+
 }
