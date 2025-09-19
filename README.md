@@ -19,19 +19,26 @@ L’objectif est de mettre en place une architecture claire et modulaire avec di
 ---
 
 ##  Structure du projet
-src/
-│── Controller/
-│ └── BanqueController.java # Couche de présentation (UI/Menu)
+BankApp/
+│── src/
+│   │── Main.java                  # Point d’entrée du programme
+│   │
+│   ├── Controller/
+│   │   └── BanqueController.java  # Couche de présentation (UI/Menu)
+│   │
+│   └── Model/
+│       ├── Compte.java            # Classe abstraite de base
+│       ├── CompteCourant.java     # Implémentation avec découvert
+│       ├── CompteEpargne.java     # Implémentation avec taux d’intérêt
+│       ├── Operation.java         # Classe abstraite des opérations
+│       ├── Versement.java         # Implémentation de l’opération Versement
+│       └── Retrait.java           # Implémentation de l’opération Retrait
 │
-│── Model/
-│ ├── Compte.java # Classe abstraite
-│ ├── CompteCourant.java # Hérite de Compte
-│ ├── CompteEpargne.java # Hérite de Compte
-│ ├── Operation.java # Classe abstraite
-│ ├── Versement.java # Hérite de Operation
-│ └── Retrait.java # Hérite de Operation
-│
-│── Main.java # Point d’entrée du programme
+│── out/                           # Classes compilées
+│── uml/                           # Diagrammes UML
+│── Bank.iml                    # Fichier projet IntelliJ
+└── README.md                      # Documentation du projet
+
 
 
 
