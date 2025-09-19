@@ -1,10 +1,11 @@
 package Model;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 public abstract class Compte {
-    // ctrl alt l
     protected String code;
     protected double solde;
     protected List<Operation> listeOperations;
@@ -15,31 +16,19 @@ public abstract class Compte {
         this.listeOperations = new ArrayList<>();
     }
 
-    // liste des comptes static
-    public void retirer(float montante) {
-        solde = solde - montante;
+    public void verser(double montant, String source) {
+        solde += montant;
+        listeOperations.add(new Versement(UUID.randomUUID().toString(),
+                LocalDate.now().toString(), montant, source));
     }
 
-    public void calculerInteret(float taux, int dureé) {
-        double interét = solde * taux * dureé;
-    }
+    // Méthodes abstraites
+    public abstract boolean retirer(double montant, String destination);
+    public abstract double calculerInteret();
+    public abstract void afficherDetails();
 
-    void afficherDetails() {
-    }
-
-    public String getCode() {
-        return code;
-    }
-
-    public double getSolde() {
-        return solde;
-    }
-
-    public void setSolde(double x) {
-        solde = x;
-    }
-
-    public String setCode(){
-        return code = code;
-    }
+    // Getters
+    public String getCode() { return code; }
+    public double getSolde() { return solde; }
+    public List<Operation> getListeOperations() { return listeOperations; }
 }
