@@ -41,7 +41,7 @@ Bank/
 │── Bank.iml                       # Fichier projet IntelliJ
 └── README.md                      # Documentation du projet
 
-
+```
 
 
 ###  Détails des classes principales
