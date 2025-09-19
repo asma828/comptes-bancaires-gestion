@@ -8,7 +8,7 @@ L’objectif est de mettre en place une architecture claire et modulaire avec di
 
 ---
 
-## 🛠️ Technologies utilisées
+##  Technologies utilisées
 - **Java 8** (JDK 1.8)
 - **Java Time API** (`java.time.LocalDateTime`) pour la gestion des dates
 - **Collections Framework** (`HashMap`, `ArrayList`) pour le stockage en mémoire
@@ -82,7 +82,7 @@ Exemple du menu principal :
 
  Consulter l’historique des opérations
 
-👨‍ Auteurs
+ Auteurs
 Projet développé par Asma Lachhab
 
 Formation : YouCode
